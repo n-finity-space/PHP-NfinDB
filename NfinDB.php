@@ -152,6 +152,20 @@
 		}
 
 		/**
+		 * Get an item from the datastore using its key
+		 *
+		 * @param   string 	$key 	the key
+		 * @param   bool 	$array 	whether to return the item as array "default" or object
+		 *
+		 * @return 	array
+		 */
+		public function findItem($key, $array = true) {
+			$stmnt = $this->db->prepare("SELECT _value FROM {$this->datatb} WHERE _key = ? LIMIT 1");
+			$ok = $stmnt && $stmnt->execute([$key]);
+			return $ok ? json_decode($stmnt->fetch(PDO::FETCH_COLUMN), $array) : [];
+		}
+
+		/**
 		 * Drop an item from the datastore using its namespace->type->key
 		 *
 		 * @param   string 	$ns 	the namespace
