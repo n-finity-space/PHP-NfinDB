@@ -2,8 +2,8 @@
 an advanced schemaless datastore based on sqlite built in PHP .
 
 # Concept
-NfinDB is built on the key->value store concept but developed to be namespace->type->key->value, 
-each namespace may be like "Database", type = "Table", and key->value = "Row" .
+NfinDB is built on the `key->value` store concept but developed to be `namespace->type->key->value`, 
+each `namespace` may be like `Database`, `type` = `Table`, and `key->value` = `Row` .
 
 # Quick overview
 
